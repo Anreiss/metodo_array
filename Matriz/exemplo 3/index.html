@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript matrizes</h1>
+<h2>O método forEach()</h2>
+
+<p>forEach() chama uma função para cada elemento em um array:</p>
+
+<p>Multiplique o valor de cada elemento por 10:</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [65, 44, 12, 4];
+numbers.forEach(myFunction)
+
+document.getElementById("demo").innerHTML = numbers;
+
+function myFunction(item, index, arr) {
+  arr[index] = item * 10;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicação</title>
+</head>
+
+<body>
+    <header>
+        <a href="Array/index.html">Array</a>
+        <a href="Array Reduz/index.html">Array Reduz</a>
+        <a href="Filtro/index.html">Filtro</a>
+        <a href="Funções/index.html">Funções</a>
+        <a href="Mapa de matriz/index.html">Mapa</a>
+        <a href="Matriz/index.html">Matriz</a>
+        <a href="Objetos/index.html">Objetos</a>
+    </header>
+    <h1>Cidades Populosas!</h1>
+    <button onclick="inicio()">Clique para começar!</button>
+    <section id="resultado">
+        <p>Clique no botão acima para saber as cidades com população igual ou maior!</p>
+    </section>
+
+    <script>
+        function inicio() {
+
+            let cid = parseInt(window.prompt('Digite o número de população:'));
+
+            let cid_pop = [
+                { nom: 'Belém', popul: 1367336 },
+                { nom: 'Ananindeua', popul: 515745 },
+                { nom: 'Santarém', popul: 351220 },
+                { nom: 'Parauabepas', popul: 271577 },
+                { nom: 'Marabá', popul: 271321 },
+            ];
+
+            let cidadesPopulosas = cid_pop.filter(function (cidade) {
+                return cidade.popul >= cid;
+            });
+
+            let resultado = "Cidades com população igual ou maior que " + cid + ":<br>";
+            for (let i = 0; i < cidadesPopulosas.length; i++) {
+                resultado += cidadesPopulosas[i].nom + " - População: " + cidadesPopulosas[i].popul + "<br>";
+            }
+
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</body>
+</html>
